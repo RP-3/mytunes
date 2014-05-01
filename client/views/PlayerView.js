@@ -11,13 +11,13 @@ var PlayerView = Backbone.View.extend({
 
   events: {
     'ended': function (){
+      this.model.incrementCount();
       this.model.dequeue();
     }
   },
 
   setSong: function(song){
     this.model = song;
-    console.log('currentsong', song);
     if (song) {
       this.setSongTitle(song);
     } else {
